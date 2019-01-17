@@ -1,2 +1,2 @@
 # Theatris
-Try unity for the first time
+Trying unity for the first time
