@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	public GameObject Ball;
+	public Ball ball;
 	public GameObject PlayerCamera;
 
 	private float BallDistance = 2.5f;
@@ -13,17 +13,26 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Ball.GetComponent<Rigidbody>().useGravity = false;
+		ball.GetComponent<Rigidbody>().useGravity = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(IsHoldingBall){
-			Ball.transform.position = PlayerCamera.transform.position + PlayerCamera.transform.forward * BallDistance;
+			ball.transform.position = PlayerCamera.transform.position + PlayerCamera.transform.forward * BallDistance;
 			if(Input.GetMouseButtonDown(0)){
 				IsHoldingBall = false;
-				Ball.GetComponent<Rigidbody>().useGravity = true;
-				Ball.GetComponent<Rigidbody>().AddForce(PlayerCamera.transform.forward * BallThrowingForce);
+				ball.ActivateTrail();
+				ball.GetComponent<Rigidbody>().useGravity = true;
+				ball.GetComponent<Rigidbody>().AddForce(PlayerCamera.transform.forward * BallThrowingForce);
+			}
+		}
+		else{
+			if(Input.GetMouseButtonDown(0)){
+				IsHoldingBall = true;
+				ball.DeactivateTrail();
+				ball.GetComponent<Rigidbody>().useGravity = false;
+				ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
 			}
 		}
 	}
