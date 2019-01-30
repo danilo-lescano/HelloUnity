@@ -7,7 +7,7 @@ public class Blade : MonoBehaviour{
     CircleCollider2D cc;
     Rigidbody2D rb;
     Camera cam;
-    float minVelocity = 0.000000001f;
+    float minVelocity = 0.001f;
     public GameObject BladeTrailPrefab;
     GameObject BladeTrail;
     bool isDragin = false;
