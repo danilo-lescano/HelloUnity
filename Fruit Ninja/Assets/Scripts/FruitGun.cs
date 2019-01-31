@@ -29,8 +29,10 @@ public class FruitGun : MonoBehaviour{
         second += Time.deltaTime;
     }
     void ThrowFruit(){
-        rb.position = cam.ScreenToWorldPoint(new Vector2(Random.Range(0f, Screen.width), Screen.height/2));
-        
+        float x = Random.Range(0f, Screen.width);
+        float y = 0f;
+        rb.position = cam.ScreenToWorldPoint(new Vector2(x, y));
+
         GameObject fruit = Instantiate(WatermelonPrefab, transform);
         FruitList.Add(fruit);
 
