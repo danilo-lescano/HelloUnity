@@ -22,6 +22,18 @@ public class Fruit : MonoBehaviour{
     }
 
     void Update(){
+        float leftBoundary, rightBoundary, bottonBoundary;
+        rightBoundary = cam.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x;
+        leftBoundary = cam.ScreenToWorldPoint(new Vector2(0, 0)).x;
+        bottonBoundary = cam.ScreenToWorldPoint(new Vector2(0, 0)).y;
+
+        if(rb.position.x > rightBoundary || rb.position.x < leftBoundary || rb.position.y < bottonBoundary)
+            Destroy(gameObject);
         
+    }
+
+    void OnTriggerEnter2D(Collider2D col){
+        if(col.tag == "Blade")
+            Destroy(gameObject);
     }
 }
