@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Plank : MonoBehaviour{
 
+    public GameObject crashPlankPrefab;
     Camera cam;
     Rigidbody2D rb;
     float forceRotation;
@@ -25,11 +26,9 @@ public class Plank : MonoBehaviour{
 
         rb.AddForce(new Vector2(xForce, yForce));
     }
-    
 
     void Update(){
         rb.angularVelocity += Time.deltaTime * (1 / rb.inertia) * forceRotation;
-
 
         float leftBoundary, rightBoundary, bottonBoundary;
         rightBoundary = cam.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x;
@@ -42,7 +41,9 @@ public class Plank : MonoBehaviour{
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        if(col.tag == "Blade")
-            Destroy(gameObject, 1f);
+        if(col.tag == "Blade"){
+            Destroy(gameObject);
+            Instantiate(crashPlankPrefab, rb.position, transform.rotation);
+        }
     }
 }

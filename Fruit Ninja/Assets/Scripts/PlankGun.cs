@@ -32,7 +32,6 @@ public class PlankGun : MonoBehaviour{
         rb.position = cam.ScreenToWorldPoint(new Vector2(x, y));
 
         GameObject plank = Instantiate(PlankPrefab, transform);
-//Quaternion.Euler(new Vector3(0, 0, -90)));
         second = 0f;
     }
     

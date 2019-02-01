@@ -68,6 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffb0a66525b646368534238b145bb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crashPlankPrefab: {fileID: 7492305207944015074, guid: 62da73b75ac2e421ca14e00abc02cc85,
+    type: 3}
 --- !u!61 &2299558567784624691
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 2401615761396890987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 0.1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 82803957177409192}
   m_RootOrder: 0
