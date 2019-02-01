@@ -43,6 +43,7 @@ public class Blade : MonoBehaviour{
     }
     void RemoveTrail(){
         BladeTrail.transform.SetParent(null);
+        Destroy(BladeTrail, 5f);
         isDragin = false;
     }
 }

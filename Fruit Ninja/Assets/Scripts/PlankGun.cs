@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FruitGun : MonoBehaviour{
+public class PlankGun : MonoBehaviour{
 
     float second = 0f;
 
-    public GameObject WatermelonPrefab;
-
-    List<GameObject> FruitList = new List<GameObject>();
+    public GameObject PlankPrefab;
 
     Rigidbody2D rb;
 
@@ -23,19 +21,18 @@ public class FruitGun : MonoBehaviour{
         UpdateSecond();
 
         if(second >= 1f)
-            ThrowFruit();
+            ThrowPlank();
     }
     void UpdateSecond(){
         second += Time.deltaTime;
     }
-    void ThrowFruit(){
+    void ThrowPlank(){
         float x = Random.Range(0f, Screen.width);
         float y = 0f;
         rb.position = cam.ScreenToWorldPoint(new Vector2(x, y));
 
-        GameObject fruit = Instantiate(WatermelonPrefab, transform);
-        FruitList.Add(fruit);
-
+        GameObject plank = Instantiate(PlankPrefab, transform);
+//Quaternion.Euler(new Vector3(0, 0, -90)));
         second = 0f;
     }
     
