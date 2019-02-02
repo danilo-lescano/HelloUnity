@@ -17,9 +17,9 @@ public class CrashPlank : MonoBehaviour{
 
         Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         float size1 = rb.position.x - mousePos.x; if(size1<0) size1 = -size1;
-        if(mousePos.x > rb.position.x) size1 += 1.5f;
-        part1.transform.localScale = new Vector3(1f, size1, 0.1f) * 0.8f;
-        part2.transform.localScale = new Vector3(1f, 3f - size1, 0.1f) * 0.8f;
+        if(mousePos.x < rb.position.x) size1 += 1.5f;
+        part1.transform.localScale = new Vector3(0.5f, size1, 0.5f) * 0.8f;
+        part2.transform.localScale = new Vector3(0.5f, 3f - size1, 0.5f) * 0.8f;
 
     }
 
