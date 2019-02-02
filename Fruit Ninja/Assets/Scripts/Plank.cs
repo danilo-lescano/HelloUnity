@@ -42,6 +42,7 @@ public class Plank : MonoBehaviour{
 
     void OnTriggerEnter2D(Collider2D col){
         if(col.tag == "Blade"){
+            Points.Value = Points.Value + 1;
             Destroy(gameObject);
             Instantiate(crashPlankPrefab, rb.position, transform.rotation);
         }
