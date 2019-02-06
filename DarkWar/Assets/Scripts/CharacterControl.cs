@@ -5,9 +5,13 @@ using UnityEngine;
 public class CharacterControl : MonoBehaviour{
     public GameObject gb;
     void Update(){
-        transform.up = new Vector2(
-            Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x,
-            Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y
-        );
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z += 10;
+        transform.position =
+            gb.transform.position
+            +
+            (mousePos - gb.transform.position).normalized * 0.5f;
+
+        transform.up = mousePos - transform.position;
     }
 }
