@@ -1,1 +1,15 @@
 git config --global alias.pullall '!git checkout master && git branch -f Blank origin/Blank && git checkout Blank && git pull origin Blank && git branch -f Basket origin/Basket && git checkout Basket && git pull origin Basket && git branch -f FruitNinja origin/FruitNinja && git checkout FruitNinja && git pull origin FruitNinja'
+
+
+nao usaar ainda
+git config --global alias.pushall '
+!git checkout Basket &&
+ git push origin Basket &&
+ git checkout FruitNinja &&
+ git push origin FruitNinja &&
+ git checkout DarkWar &&
+ git push origin DarWar &&
+ git checkout master &&
+ git merge Basket &&
+ git merge FruitNinja &&
+ git merge DarkWar && git push'
