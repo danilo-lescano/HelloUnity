@@ -31,6 +31,6 @@ public class ArmControl : MonoBehaviour{
         GameObject ob = Instantiate(bulletPrefab);
         ob.transform.position = transform.position;
         Bullet b = ob.GetComponent<Bullet>();
-        b.Direction = direction;
+        b.Direction = direction.normalized;
     }
 }
