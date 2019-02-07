@@ -1,4 +1,4 @@
-git config --global alias.pullall '!git checkout master && git branch -f Blank origin/Blank && git checkout Blank && git pull origin Blank && git branch -f Basket origin/Basket && git checkout Basket && git pull origin Basket && git branch -f FruitNinja origin/FruitNinja && git checkout FruitNinja && git pull origin FruitNinja && git branch -f DarkWar origin/DarkWar && git checkout DarkWar && git pull origin DarkWar && git checkout master'
+git config --global alias.pullall '!git checkout master && git pull && git branch -f Blank origin/Blank && git checkout Blank && git pull origin Blank && git branch -f Basket origin/Basket && git checkout Basket && git pull origin Basket && git branch -f FruitNinja origin/FruitNinja && git checkout FruitNinja && git pull origin FruitNinja && git branch -f DarkWar origin/DarkWar && git checkout DarkWar && git pull origin DarkWar && git checkout master'
 
 
 nao usaar ainda
