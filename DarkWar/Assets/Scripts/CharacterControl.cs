@@ -5,24 +5,25 @@ using UnityEngine;
 public class CharacterControl : MonoBehaviour{
 
     float walkSpeed = 3f, runSpeed = 8f;
-    string lastKeyDown = "";
+    string lastKeyDown = ""; //last horizontal key pressed
     bool canRun = false;
     float doubleClickTime = 1f; //cont 1 second from the first click to the second
     Rigidbody2D rb;
+    int jumpsLeft, maxJumps = 2; //number of consecutives jumps left
+    float jumpForce = 300f;
 
     //clicked key
     void Start(){
+        jumpsLeft = maxJumps;
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update(){
-
         CheckDoubleClick();
 
         UpdatePosition();
-        
-        if(Input.GetKeyDown(KeyCode.Space)) //jump
-            rb.AddForce(new Vector2(0f, 500f));
+
+        CheckJump();
     }
 
     void UpdatePosition(){
@@ -56,5 +57,17 @@ public class CharacterControl : MonoBehaviour{
             doubleClickTime -= Time.deltaTime;
         else if(Input.GetAxis("Horizontal") == 0)
             canRun = false;
+    }
+
+    void CheckJump(){
+        if(Input.GetKeyDown(KeyCode.Space) && jumpsLeft > 0){
+            jumpsLeft--;
+            rb.AddForce(new Vector2(0f, jumpForce));
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col){
+        if(col.tag == "Floor")
+            jumpsLeft = maxJumps;
     }
 }
