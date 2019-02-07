@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour{
 
-    public GameObject player;
+    GameObject player;
     void Start(){
-
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
     }
 
     void Update(){
@@ -15,9 +15,8 @@ public class Enemy : MonoBehaviour{
         transform.position += direction * Time.deltaTime * 0.5f;
     }
 
-    void onCollisionEnter2D(Collision2D col){
-        if(col.tag == "bullet"){
-
-        }
+    void OnTriggerEnter2D(Collider2D col){
+        if(col.tag == "Bullet")
+            Destroy(gameObject);
     }
 }
