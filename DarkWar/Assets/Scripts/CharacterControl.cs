@@ -19,7 +19,7 @@ public class CharacterControl : MonoBehaviour{
     void Start(){
         jumpsLeft = maxJumps;
         rb = GetComponent<Rigidbody2D>();
-        life = PlayerStats.Life = PlayerStats.MaxLife;
+        life = PlayerStats.MaxLife;
     }
 
     void Update(){
@@ -85,13 +85,12 @@ public class CharacterControl : MonoBehaviour{
                 GameOver();
 
             PlayerStats.Life = life;
-            Debug.Log(life);
-            Debug.Log(PlayerStats.Life);
         }
     }
 
     void GameOver(){
         Debug.Log("game over!");
+        PlayerStats.ResetStats();
         SceneManager.LoadScene("Main");
     }
 }
