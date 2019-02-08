@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class CharacterControl : MonoBehaviour{
@@ -11,11 +12,14 @@ public class CharacterControl : MonoBehaviour{
     Rigidbody2D rb;
     int jumpsLeft, maxJumps = 2; //number of consecutives jumps left
     float jumpForce = 300f;
+    float immunityTime = 1f;
+    public int life;
 
     //clicked key
     void Start(){
         jumpsLeft = maxJumps;
         rb = GetComponent<Rigidbody2D>();
+        life = PlayerStats.Life = PlayerStats.MaxLife;
     }
 
     void Update(){
@@ -24,6 +28,8 @@ public class CharacterControl : MonoBehaviour{
         UpdatePosition();
 
         CheckJump();
+
+        CheckImmunity();
     }
 
     void UpdatePosition(){
@@ -66,8 +72,26 @@ public class CharacterControl : MonoBehaviour{
         }
     }
 
+    void CheckImmunity(){
+        if(immunityTime > 0)
+            immunityTime -= Time.deltaTime;
+    }
     void OnTriggerEnter2D(Collider2D col){
         if(col.tag == "Floor")
             jumpsLeft = maxJumps;
+        else if(col.tag == "Enemy" && immunityTime <= 0){
+            immunityTime = 1f;
+            if(--life == 0)
+                GameOver();
+
+            PlayerStats.Life = life;
+            Debug.Log(life);
+            Debug.Log(PlayerStats.Life);
+        }
+    }
+
+    void GameOver(){
+        Debug.Log("game over!");
+        SceneManager.LoadScene("Main");
     }
 }

@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour{
 
     GameObject player;
     void Start(){
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update(){
