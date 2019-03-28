@@ -1,5 +1,5 @@
 lista de aspect ratios pra se levar em consideracao
-4:3
+16:12
 16:10
 16:9
 18.5:9
