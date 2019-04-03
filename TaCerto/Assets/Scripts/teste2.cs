@@ -45,11 +45,11 @@ public class teste2 : MonoBehaviour{
     public int wid, hei;
 
     void Start(){
-        wid = Screen.width;
-        hei = 22*Screen.height/36;
     }
 
     void Update(){
+        wid = Screen.width;
+        hei = 22*Screen.height/36;
         tempo -= Time.deltaTime;
         if(tempo < 0f){
             Texture2D texture = new Texture2D(wid, hei);
