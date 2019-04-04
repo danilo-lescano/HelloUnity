@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DefaultButton : MonoBehaviour{
     Collider2D[] colliders;
@@ -15,10 +16,6 @@ public class DefaultButton : MonoBehaviour{
         clickedColor = 0.784f;
         actualColor = defaulfColor = 1f;
         flagClickOn = false;
-        OnClicked += hehe;
-    }
-    void hehe(){
-        print("hehe");
     }
     void Update(){
         if(Input.GetMouseButtonDown(0)){

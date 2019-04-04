@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class GoodBoy : MonoBehaviour{
-    public bool good = true;
+    /*public bool good = true;
     [MenuItem("GameObject/3D Object/GoodBoy", false, 10)]
     static void CreateDog(MenuCommand menuCommand){
         GameObject go = new GameObject("GoodBoy");
@@ -43,6 +43,6 @@ public class GoodBoy : MonoBehaviour{
     void Update(){
         // they're all good dogs
         good = true;
-    }
+    }*/
     
 }

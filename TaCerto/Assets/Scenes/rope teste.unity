@@ -2547,7 +2547,6 @@ GameObject:
   - component: {fileID: 609792356}
   - component: {fileID: 609792353}
   - component: {fileID: 609792352}
-  - component: {fileID: 609792354}
   m_Layer: 0
   m_Name: Sphere (0)
   m_TagString: Untagged
@@ -2606,18 +2605,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &609792354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609792350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 667b518801359437a9ec1a95030e9954, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &609792356
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4643,6 +4630,7 @@ GameObject:
   - component: {fileID: 1218676724}
   - component: {fileID: 1218676721}
   - component: {fileID: 1218676720}
+  - component: {fileID: 1218676722}
   m_Layer: 0
   m_Name: Sphere (49)
   m_TagString: Untagged
@@ -4701,6 +4689,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1218676722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218676718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667b518801359437a9ec1a95030e9954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1218676724
 MeshRenderer:
   m_ObjectHideFlags: 0
