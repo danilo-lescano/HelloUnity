@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class lineRenderer : MonoBehaviour{
-    public GameObject obj1, obj2;
-    void LateUpdate(){
-        if(obj1 != null && obj2 != null){
-            Vector3[] pos = {obj1.transform.position, obj2.transform.position};
-            GetComponent<LineRenderer>().SetPositions(pos);
+    void Update(){
+        if(Input.GetMouseButton(0)){
+            Vector3 pos =  Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+            pos.z = 0f;
+            transform.position = pos;
         }
     }
 }
