@@ -15,7 +15,7 @@ public class WinCheck : MonoBehaviour{
                     xCol++;
                 if(boardMatriz.matriz[i,j] == 'O')
                     oCol++;
-                print(i + "," + j + ":" + boardMatriz.matriz[i,j]);
+                //print(i + "," + j + ":" + boardMatriz.matriz[i,j]);
             }
             if(xCol == 3)
                 print("x win");
