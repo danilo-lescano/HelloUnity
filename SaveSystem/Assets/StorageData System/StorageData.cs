@@ -4,6 +4,7 @@ using UnityEngine;
 public static class StorageData{
     public static BaseModel LoadData(string path){
         string fullPath = Application.persistentDataPath + "/" + path + ".tce"; // tce is ta certo extension
+        Debug.Log(fullPath);
         if(!File.Exists(fullPath))
             return default(BaseModel);
         BinaryFormatter bf = new BinaryFormatter();
@@ -22,6 +23,7 @@ public static class StorageData{
         }
         BinaryFormatter bf = new BinaryFormatter();
         string fullPath = Application.persistentDataPath + "/" + path + ".tce";
+        Debug.Log(fullPath);
         FileStream fs = new FileStream(fullPath, FileMode.Create);
         bf.Serialize(fs, (BaseModel)data);
         fs.Close();

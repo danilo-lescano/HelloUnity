@@ -12,19 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdce13e75ac0843589f4684c9fc16ea7, type: 3}
   m_Name: testeSO
   m_EditorClassIdentifier: 
-  ID: 
-  npcName: 
-  hp: 0
-  mana: 0
-  stringtype: 
-  inttype: 0
-  floattype: 0
-  booltype: 0
-  v2: {x: 0, y: 0}
-  v3: {x: 0, y: 0, z: 0}
-  stringtypearr: []
-  inttypearr: 
-  floattypearr: []
-  booltypearr: 
-  v2arr: []
-  v3arr: []
+  ID: thais
+  npcName: thais a maga
+  hp: 14
+  mana: 17
+  stringtype: 1
+  inttype: 1
+  floattype: 1
+  booltype: 1
+  v2: {x: 1, y: 1}
+  v3: {x: 1, y: 1, z: 1}
+  stringtypearr:
+  - 1
+  inttypearr: 01000000
+  floattypearr:
+  - 1
+  booltypearr: 01
+  v2arr:
+  - {x: 1, y: 1}
+  v3arr:
+  - {x: 1, y: 1, z: 1}

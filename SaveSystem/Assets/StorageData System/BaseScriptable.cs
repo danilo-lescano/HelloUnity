@@ -8,11 +8,10 @@ public class BaseScriptable : ScriptableObject{
 
     public BaseModel ListValue { get; set; }
     public void Save(){
-        foreach (MemberInfo m in (this.GetType()).GetMembers()){//typeof(ScriptableObject).GetMembers()){
-            if(m.MemberType.ToString() == "Field" && (m.DeclaringType.Name == this.GetType().Name || m.DeclaringType.Name == typeof(BaseScriptable).Name))
-                Debug.Log(m.DeclaringType.Name + " " + m.MemberType.ToString() + " " + m.Name);
-        }
-        //StorageData.SaveData(ListValue, ID);
+        StringVariable sv = new StringVariable();
+        sv.value = "thais é maravilhosa";
+        ListValue.ListValue.Add(sv);
+        StorageData.SaveData(ListValue, ID);
     }
     public void Load(){
         // Get the type of FieldsClass.
@@ -27,7 +26,7 @@ public class BaseScriptable : ScriptableObject{
         {
             Debug.Log(fields[i].Name + " : " + fields[i].GetValue(this) + " : " + fields[i].ReflectedType + " : " + fields[i].FieldType);
         }
-        //ListValue = StorageData.LoadData(ID);
+        ListValue = StorageData.LoadData(ID);
     }
 
     private void AddValueToList(FieldInfo f){
