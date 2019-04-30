@@ -15,6 +15,13 @@ public class PieceManager : MonoBehaviour{
 
     void Update(){
         if(Input.GetMouseButtonDown(0)){
+            RaycastHit hit; 
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
+            if(Physics.Raycast(ray, out hit, 100.0f)) {
+                Debug.Log("You selected the " + hit.transform.name); // ensure you picked right object
+            }
+
+
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             int[] posMatriz = new int[2]{
                 pos.x >= 1.425f ? 2 : pos.x <= -1.425f ? 0 : 1,
