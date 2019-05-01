@@ -1,5 +1,13 @@
 using System;
 [Serializable]
 public class IntegerVariableArray : IBaseVariable{
-    public int[] value;
+    int[] _value;
+    public Object value {
+        get{
+            return (Object) _value;
+        }
+        set{
+            _value = (int[]) value;
+        }
+    }
 }

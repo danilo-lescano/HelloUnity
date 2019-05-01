@@ -14,20 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: thais
   npcName: thais a maga
-  hp: 14
-  mana: 17
-  stringtype: 1
-  inttype: 1
-  floattype: 1
-  booltype: 1
-  v2: {x: 1, y: 1}
-  v3: {x: 1, y: 1, z: 1}
-  stringtypearr:
-  - 1
-  inttypearr: 01000000
-  floattypearr:
-  - 1
-  booltypearr: 01
+  hp: 15
+  mana: 15
+  stringtype: 2
+  inttype: 2
+  floattype: 2
+  booltype: 0
+  v2: {x: 0, y: 0}
+  v3: {x: 0, y: 0, z: 0}
+  stringtypearr: []
+  inttypearr: 
+  floattypearr: []
+  booltypearr: 
   v2arr:
   - {x: 1, y: 1}
   v3arr:

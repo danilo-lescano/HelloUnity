@@ -1,5 +1,13 @@
 using System;
 [Serializable]
 public class BooleanVariableArray : IBaseVariable{
-    public bool[] value;
+    bool[] _value;
+    public Object value {
+        get{
+            return (Object) _value;
+        }
+        set{
+            _value = (bool[]) value;
+        }
+    }
 }
