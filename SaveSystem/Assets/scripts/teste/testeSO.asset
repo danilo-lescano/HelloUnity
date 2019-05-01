@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdce13e75ac0843589f4684c9fc16ea7, type: 3}
+  m_Script: {fileID: 11500000, guid: adfcdf24ed2d6744087def8a7d82f48c, type: 3}
   m_Name: testeSO
   m_EditorClassIdentifier: 
-  ID: thais
-  npcName: thais a maga
+  ID: player
+  npcName: Thanos
   hp: 15
   mana: 15
-  stringtype: 2
-  inttype: 2
-  floattype: 2
+  stringtype: 10
+  inttype: 10
+  floattype: 10
   booltype: 0
   v2: {x: 0, y: 0}
   v3: {x: 0, y: 0, z: 0}
@@ -26,7 +26,5 @@ MonoBehaviour:
   inttypearr: 
   floattypearr: []
   booltypearr: 
-  v2arr:
-  - {x: 1, y: 1}
-  v3arr:
-  - {x: 1, y: 1, z: 1}
+  v2arr: []
+  v3arr: []
