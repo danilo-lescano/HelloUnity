@@ -1,5 +1,13 @@
 using System;
 [Serializable]
 public class StringVariable : IBaseVariable{
-    public string value;
+    string _value;
+    public Object value {
+        get{
+            return (Object) _value;
+        }
+        set{
+            _value = (string) value;
+        }
+    }
 }

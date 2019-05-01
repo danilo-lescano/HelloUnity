@@ -1,5 +1,13 @@
 using System;
 [Serializable]
 public class FloatVariableArray : IBaseVariable{
-    public float[] value;
+    float[] _value;
+    public Object value {
+        get{
+            return (Object) _value;
+        }
+        set{
+            _value = (float[]) value;
+        }
+    }
 }

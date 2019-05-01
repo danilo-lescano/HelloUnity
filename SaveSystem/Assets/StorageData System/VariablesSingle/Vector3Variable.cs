@@ -2,18 +2,19 @@ using System;
 using UnityEngine;
 [Serializable]
 public class Vector3Variable : IBaseVariable{
-    public float val1;
-    public float val2;
-    public float val3;
+    float val1;
+    float val2;
+    float val3;
 
-    public Vector3 value {
+    public System.Object value {
         get{
-            return new Vector3(val1, val2, val3);
+            return (System.Object)new Vector3(val1, val2, val3);
         }
         set{
-            val1 = value.x;
-            val2 = value.y;
-            val3 = value.z;
+            Vector3 vector3 = (Vector3) value;
+            val1 = vector3.x;
+            val2 = vector3.y;
+            val3 = vector3.z;
         }
     }
     

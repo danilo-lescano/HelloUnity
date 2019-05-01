@@ -2,16 +2,17 @@ using System;
 using UnityEngine;
 [Serializable]
 public class Vector2Variable : IBaseVariable{
-    public float val1;
-    public float val2;
+    float val1;
+    float val2;
 
-    public Vector2 value {
+    public System.Object value {
         get{
-            return new Vector2(val1, val2);
+            return (System.Object)new Vector2(val1, val2);
         }
         set{
-            val1 = value.x;
-            val2 = value.y;
+            Vector2 vector2 = (Vector2) value;
+            val1 = vector2.x;
+            val2 = vector2.y;
         }
     }
     
