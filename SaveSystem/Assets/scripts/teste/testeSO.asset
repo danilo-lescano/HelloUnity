@@ -25,6 +25,9 @@ MonoBehaviour:
   stringtypearr: []
   inttypearr: 
   floattypearr: []
-  booltypearr: 
-  v2arr: []
-  v3arr: []
+  booltypearr: 0100010001
+  v2arr:
+  - {x: 0, y: 1}
+  - {x: 1, y: 0}
+  v3arr:
+  - {x: 1, y: 1, z: 1}

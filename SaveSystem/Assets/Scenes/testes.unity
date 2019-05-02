@@ -1715,6 +1715,7 @@ MonoBehaviour:
   mana: {fileID: 257226467}
   sampleBaseScriptable: {fileID: 11400000, guid: 91d41fd2f3e53426d8d1fffadd8f8592,
     type: 2}
+  inventario: {fileID: 11400000, guid: f6e2d9575c0bc4c819c7bb9701b0825a, type: 2}
 --- !u!1 &1044250100
 GameObject:
   m_ObjectHideFlags: 0
