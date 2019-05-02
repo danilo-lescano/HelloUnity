@@ -15,5 +15,4 @@ public class Vector2Variable : IBaseVariable{
             val2 = vector2.y;
         }
     }
-    
 }
