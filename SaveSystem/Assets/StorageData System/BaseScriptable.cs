@@ -34,42 +34,30 @@ public class BaseScriptable : ScriptableObject{
     }
     private void AddValueToList(FieldInfo f){
         IBaseVariable variable = null;
-        if(f.FieldType.ToString() == "System.String"){
+        if(f.FieldType.ToString() == "System.String")
             variable = new StringVariable();
-        }
-        else if(f.FieldType.ToString() == "System.Int32"){
+        else if(f.FieldType.ToString() == "System.Int32")
             variable = new IntegerVariable();
-        }
-        else if(f.FieldType.ToString() == "System.Single"){
+        else if(f.FieldType.ToString() == "System.Single")
             variable = new FloatVariable();
-        }
-        else if(f.FieldType.ToString() == "System.Boolean"){
+        else if(f.FieldType.ToString() == "System.Boolean")
             variable = new BooleanVariable();
-        }
-        else if(f.FieldType.ToString() == "System.String[]"){
+        else if(f.FieldType.ToString() == "System.String[]")
             variable = new StringVariableArray();
-        }
-        else if(f.FieldType.ToString() == "System.Int32[]"){
+        else if(f.FieldType.ToString() == "System.Int32[]")
             variable = new IntegerVariableArray();
-        }
-        else if(f.FieldType.ToString() == "System.Single[]"){
+        else if(f.FieldType.ToString() == "System.Single[]")
             variable = new FloatVariableArray();
-        }
-        else if(f.FieldType.ToString() == "System.Boolean[]"){
+        else if(f.FieldType.ToString() == "System.Boolean[]")
             variable = new BooleanVariableArray();
-        }
-        else if(f.FieldType.ToString() == "UnityEngine.Vector2"){
+        else if(f.FieldType.ToString() == "UnityEngine.Vector2")
             variable = new Vector2Variable();
-        }
-        else if(f.FieldType.ToString() == "UnityEngine.Vector3"){
+        else if(f.FieldType.ToString() == "UnityEngine.Vector3")
             variable = new Vector3Variable();
-        }
-        else if(f.FieldType.ToString() == "UnityEngine.Vector2[]"){
+        else if(f.FieldType.ToString() == "UnityEngine.Vector2[]")
             variable = new Vector2VariableArray();
-        }
-        else if(f.FieldType.ToString() == "UnityEngine.Vector3[]"){
+        else if(f.FieldType.ToString() == "UnityEngine.Vector3[]")
             variable = new Vector3VariableArray();
-        }
         if(variable != null){
             variable.value = f.GetValue(this);
             ListValue.Add((string) f.Name, variable);
