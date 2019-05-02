@@ -64,6 +64,12 @@ public class BaseScriptable : ScriptableObject{
         else if(f.FieldType.ToString() == "UnityEngine.Vector3"){
             variable = new Vector3Variable();
         }
+        else if(f.FieldType.ToString() == "UnityEngine.Vector2[]"){
+            variable = new Vector2VariableArray();
+        }
+        else if(f.FieldType.ToString() == "UnityEngine.Vector3[]"){
+            variable = new Vector3VariableArray();
+        }
         if(variable != null){
             variable.value = f.GetValue(this);
             ListValue.Add((string) f.Name, variable);

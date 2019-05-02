@@ -17,5 +17,4 @@ public class Vector3Variable : IBaseVariable{
             val3 = vector3.z;
         }
     }
-    
 }
