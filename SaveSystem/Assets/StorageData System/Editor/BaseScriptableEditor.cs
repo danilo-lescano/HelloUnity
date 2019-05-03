@@ -11,7 +11,7 @@ public class BaseScriptableEditor : Editor {
     }
 
     public override void OnInspectorGUI(){
-        
         base.OnInspectorGUI();
+        EditorGUILayout.HelpBox("Application path: " + Application.persistentDataPath, MessageType.Info);
     }
 }
