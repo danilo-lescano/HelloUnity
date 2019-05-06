@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SaveSystem;
 
 [CreateAssetMenu(menuName = "Teste/sampleSo")]
 public class SampleBaseScriptable : BaseScriptable{
