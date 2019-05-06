@@ -1,4 +1,6 @@
 using System;
-public interface IBaseVariable{
-    Object value { get; set; }
+namespace UnityEngine.SaveSystem{
+    public interface IBaseVariable{
+        System.Object value { get; set; }
+    }
 }

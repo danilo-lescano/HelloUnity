@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SaveSystem;
 public class ManagerNPC : MonoBehaviour{
     public TextMeshProUGUI nome, hp, mana;
     public SampleBaseScriptable sampleBaseScriptable;
