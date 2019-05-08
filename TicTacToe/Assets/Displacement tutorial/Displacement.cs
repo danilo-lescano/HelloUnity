@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Displacement : MonoBehaviour{
     float displacementAmount;
+    float timeVar = 0.01f;
     MeshRenderer mesh;
     void Start(){
         mesh = GetComponent<MeshRenderer>();
