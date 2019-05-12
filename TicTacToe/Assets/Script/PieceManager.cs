@@ -44,4 +44,7 @@ public class PieceManager : MonoBehaviour{
             }
         }
     }
+    public void NewClick(int pos){
+        print(pos);
+    }
 }
