@@ -38,15 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: background
-    uniqueID: 1627681543
-    locked: 0
-  - name: background2
-    uniqueID: 657998337
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: hud
-    uniqueID: 499652673
+  - name: HUD 1
+    uniqueID: 3877536433
+    locked: 0
+  - name: HUD 1.5
+    uniqueID: 2038493001
+    locked: 0
+  - name: HUD 2
+    uniqueID: 4170488719
     locked: 0
