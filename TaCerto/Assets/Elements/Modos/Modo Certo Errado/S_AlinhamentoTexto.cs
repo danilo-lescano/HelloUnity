@@ -5,28 +5,80 @@ using TMPro;
 
 public class S_AlinhamentoTexto : MonoBehaviour{
     float initialY;
+    bool isScrolling, startScoll;
+    TextMeshProUGUI text;
+    public int maxLinhas;
+
+    float initialBottomY {
+        get{
+            return (Camera.main.ScreenToWorldPoint(
+                new Vector3(text.bounds.extents.y * 1.8f, 0, 0)
+            )).x;
+        }
+    }
+
+    void Awake(){
+        text = GetComponent<TextMeshProUGUI>();
+    }
     void Start(){
         initialY = transform.position.y;
     }
-
     void Update(){
-        if(Input.GetMouseButtonDown(0))
-            StartCoroutine(x((Camera.main.ScreenToWorldPoint(Input.mousePosition)).y, transform.position));
-        if(!Input.GetButton("Fire1") && initialY > transform.position.y){
+        if(startScoll && text.textInfo.lineCount > maxLinhas)
+            StartCoroutine(Scrolling((Camera.main.ScreenToWorldPoint(Input.mousePosition)).y, transform.position));
+        else if(GetLastScrollInput() && isScrolling)
+            StartCoroutine(SoltarScrolling());
+        else if(!isScrolling && initialY > transform.position.y){
             Vector3 pos = transform.position;
             pos.y = Mathf.Lerp(pos.y, initialY, 0.2f);
             transform.position = pos;
         }
-        print(GetComponent<TextMeshProUGUI>().bounds.extents.y);
-        print(GetComponent<TextMeshProUGUI>().textBounds.extents.y);
-        print(GetComponent<TextMeshProUGUI>().textInfo.lineCount);
+        else if(!isScrolling && initialBottomY > 0f && initialBottomY < transform.position.y){
+            Vector3 pos = transform.position;
+            pos.y = Mathf.Lerp(pos.y, initialBottomY, 0.2f);
+            transform.position = pos;
+        }
     }
-    IEnumerator x(float yInicialDoClick, Vector3 posicaoInicial){
+    IEnumerator Scrolling(float yInicialDoClick, Vector3 posicaoInicial){
+        startScoll = false;
+        isScrolling = true;
         Vector3 pos = posicaoInicial;
-        while(Input.GetButton("Fire1")){
+        while(GetScrollInput()){
             pos.y = posicaoInicial.y + (Camera.main.ScreenToWorldPoint(Input.mousePosition)).y - yInicialDoClick;
             transform.position = pos;
             yield return null;
         }
+    }
+    IEnumerator SoltarScrolling(){
+        isScrolling = false;
+        print("hehe");
+        yield return null;
+    }
+    bool GetScrollInput(){
+        if( Input.GetButton("Fire1") ||
+           (Input.touchCount == 1 && Input.touches[0].phase != TouchPhase.Began)
+        ) return true;
+        return false;
+    }
+    bool GetFirstScrollInput(){
+        if( Input.GetMouseButtonDown(0) ||
+           (Input.touchCount == 1 && Input.touches[0].phase == TouchPhase.Began)
+        ) return true;
+        return false;
+    }
+    bool GetLastScrollInput(){
+        if( Input.GetMouseButtonUp(0) ||
+           (Input.touchCount == 1 && (Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled))
+        ) return true;
+        return false;
+    }
+    float yInputPoistion(){
+        if(Input.GetMouseButtonDown(0))
+            return (Camera.main.ScreenToWorldPoint(Input.mousePosition)).y;
+        else
+            return Input.touches[0].position.y;
+    }
+    public void StartScroling(){
+        startScoll = true;
     }
 }

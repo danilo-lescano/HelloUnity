@@ -2,12 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SO_AtividadeAtual_main : MonoBehaviour{
-    void Start(){
-        
-    }
+public class SO_AtividadeAtual_main : ScriptableObject{
 
-    void Update(){
-        
-    }
 }
