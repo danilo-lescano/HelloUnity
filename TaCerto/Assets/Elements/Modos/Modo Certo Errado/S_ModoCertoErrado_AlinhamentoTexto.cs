@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class S_AlinhamentoTexto : MonoBehaviour{
+public class S_ModoCertoErrado_AlinhamentoTexto : MonoBehaviour{
     float initialY;
-    bool isScrolling, startScoll;
+    bool isScrolling, startScroll;
     TextMeshProUGUI text;
     public int maxLinhas;
 
@@ -18,13 +18,14 @@ public class S_AlinhamentoTexto : MonoBehaviour{
     }
 
     void Awake(){
+        startScroll = false;
         text = GetComponent<TextMeshProUGUI>();
     }
     void Start(){
         initialY = transform.position.y;
     }
     void Update(){
-        if(startScoll && text.textInfo.lineCount > maxLinhas)
+        if(startScroll && text.textInfo.lineCount > maxLinhas)
             StartCoroutine(Scrolling((Camera.main.ScreenToWorldPoint(Input.mousePosition)).y, transform.position));
         else if(GetLastScrollInput() && isScrolling)
             StartCoroutine(SoltarScrolling());
@@ -40,7 +41,7 @@ public class S_AlinhamentoTexto : MonoBehaviour{
         }
     }
     IEnumerator Scrolling(float yInicialDoClick, Vector3 posicaoInicial){
-        startScoll = false;
+        startScroll = false;
         isScrolling = true;
         Vector3 pos = posicaoInicial;
         while(GetScrollInput()){
@@ -51,7 +52,6 @@ public class S_AlinhamentoTexto : MonoBehaviour{
     }
     IEnumerator SoltarScrolling(){
         isScrolling = false;
-        print("hehe");
         yield return null;
     }
     bool GetScrollInput(){
@@ -79,6 +79,6 @@ public class S_AlinhamentoTexto : MonoBehaviour{
             return Input.touches[0].position.y;
     }
     public void StartScroling(){
-        startScoll = true;
+        startScroll = true;
     }
 }

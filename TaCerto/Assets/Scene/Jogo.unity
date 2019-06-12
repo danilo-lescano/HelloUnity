@@ -210,7 +210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1413559838
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1598979101
+--- !u!1001 &1618326828
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -437,7 +437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7761272b639eb456688d49a4860b2b23, type: 3}
---- !u!1001 &2024122385
+--- !u!1001 &1917135183
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
