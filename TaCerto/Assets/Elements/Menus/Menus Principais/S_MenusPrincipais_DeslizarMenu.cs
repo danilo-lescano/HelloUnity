@@ -7,7 +7,7 @@ public class S_MenusPrincipais_DeslizarMenu : MonoBehaviour{
     public SO_MenusPrincipais_ChangeMenu cm;
     void Awake(){
         valorDeslize = 0f;
-        intensidadeLerp = 0.2f;
+        intensidadeLerp = 10f;
         cm.AbrirMenuSalas += menuSalas;
         cm.AbrirMenuPerfil += menuPerfil;
         cm.AbrirMenuDemo += menuDemo;
@@ -19,7 +19,7 @@ public class S_MenusPrincipais_DeslizarMenu : MonoBehaviour{
     }
     void Update(){
         Vector2 pos = transform.position;
-        pos.x = Mathf.Lerp(pos.x, valorDeslize, intensidadeLerp);
+        pos.x = Mathf.Lerp(pos.x, valorDeslize, intensidadeLerp * Time.deltaTime);
         transform.position = pos;
     }
     void menuSalas(){ valorDeslize = converterIndexParaPosicaoGlobal(-1); }
