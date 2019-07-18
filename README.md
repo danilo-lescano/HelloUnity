@@ -1,2 +1,2 @@
 # SaveSystem
-Sistema para salvar e carregar dados na unityStorageData System
+Sistema para persistencia de dados na unity.
