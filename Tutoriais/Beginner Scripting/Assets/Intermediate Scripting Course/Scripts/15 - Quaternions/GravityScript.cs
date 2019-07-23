@@ -4,9 +4,8 @@ using System.Collections;
 public class GravityScript : MonoBehaviour {
     public Transform target;
 
-
     void Update () {
-        Vector3 relativePos = (target.position + new Vector3(0, 1.5f, 0)) - transform.position;
+        Vector3 relativePos = (target.position + (new Vector3(0f, 0.2f, 0f))) - transform.position;
         Quaternion rotation = Quaternion.LookRotation(relativePos);
 
         Quaternion current = transform.localRotation;
@@ -14,4 +13,4 @@ public class GravityScript : MonoBehaviour {
         transform.localRotation = Quaternion.Slerp(current, rotation, Time.deltaTime);
         transform.Translate(0, 0, 3 * Time.deltaTime);
     }
-} 
+}
