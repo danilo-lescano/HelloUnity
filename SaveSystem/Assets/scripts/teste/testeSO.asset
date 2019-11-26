@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: player
   npcName: Thanos
-  hp: 15
-  mana: 15
+  hp: 1
+  mana: 28
   stringtype: 10
   inttype: 10
   floattype: 10
